@@ -1,0 +1,14 @@
+{
+  "name": "foodyzone",
+  "version": "1.0.0",
+  "description": "This is a online food ordering app much like swiggy",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "shubham deulkar",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.1"
+  }
+}
