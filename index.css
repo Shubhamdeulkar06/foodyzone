@@ -16,6 +16,8 @@
 
 .nav-items {
   padding: 0px 20px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-items > ul {
@@ -67,5 +69,38 @@
 
 .filter-btn {
   margin: 10px;
+  cursor: pointer;
+}
+
+/* shimmer effect */
+.shimmer-card {
+  width: 325px;
+  transition: all 0.2s;
+
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 6px 15px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shimmer-img {
+  width: 100%;
+  height: 250px;
+  border-radius: 30px;
+  background-color: lightgrey;
+}
+.shimmer-card-Content > h2,
+.shimmer-card-Content > h3,
+.shimmer-card-Content > h4 {
+  background-color: lightgrey;
+  color: lightgrey;
+  margin: 2px;
+}
+
+.shimmer-card-Content {
+  padding: 10px;
+}
+
+.login-btn {
+  padding: 10px 15px;
   cursor: pointer;
 }
