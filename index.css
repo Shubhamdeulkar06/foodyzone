@@ -189,3 +189,26 @@ footer > h4 {
   padding: 30px;
   flex-wrap: wrap;
 }
+
+.user-card {
+  width: 400px;
+  border: 1px solid black;
+  text-align: center;
+}
+.user-card img {
+  width: 100%;
+}
+
+.user-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.btn-green {
+  background-color: rgb(33, 150, 33);
+}
+.btn-red {
+  background-color: rgb(192, 7, 7);
+}
