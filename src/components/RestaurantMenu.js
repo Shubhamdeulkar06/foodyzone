@@ -14,7 +14,7 @@ const RestaurantMenu = () => {
     restaurant?.cards[0]?.card?.card?.info;
 
   const { itemCards } =
-    restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card
+    restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;
   console.log(itemCards);
   return (

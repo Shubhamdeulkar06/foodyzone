@@ -14,9 +14,9 @@ class About extends React.Component {
     // console.log("Parent render");
 
     return (
-      <div>
+      <div className="m-4">
         <h1>This is the about page</h1>
-        <div className="user-card-container">
+        <div className="flex justify-center">
           <UserClass name={"shubham from class"} location={"Goa"} />
         </div>
       </div>

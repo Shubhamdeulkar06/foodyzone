@@ -15,7 +15,7 @@ const Body = () => {
 
   async function getRestaurants() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=15.4909301&lng=73.8278496&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     console.log(json);
@@ -33,16 +33,17 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search-container">
+    <div className="mx-[10%]">
+      <div className="flex justify-center lg:justify-end ">
+        <div className="my-4 lg:p-4 ">
           <input
             type="text"
-            className="search-box"
+            className=" w-[60%] lg:w-auto border border-solid border-black rounded-lg px-4 py-2"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
+            className="px-4 py-2 bg-blue-200 lg:m-4 rounded-lg"
             onClick={() => {
               const filteredRestaurant = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -53,19 +54,21 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.2
-            );
-            setFilteredRestaurant(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="hidden lg:my-4 p-4 lg:flex items-center ">
+          <button
+            className="px-4 py-2 rounded-lg bg-green-200 hover:bg-green-300 transition duration-200"
+            onClick={() => {
+              const filteredList = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4.2
+              );
+              setFilteredRestaurant(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap justify-center md:justify-between ">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}

@@ -1,4 +1,8 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header {
   display: flex;
   justify-content: space-between;
 }
@@ -70,10 +74,10 @@
 .filter-btn {
   margin: 10px;
   cursor: pointer;
-}
+} */
 
 /* shimmer effect */
-.shimmer-card {
+/* .shimmer-card {
   width: 325px;
   transition: all 0.2s;
 
@@ -112,10 +116,10 @@
 
 footer > h4 {
   text-align: center;
-}
+} */
 
 /* shimmer styling */
-.card {
+/* .card {
   position: relative;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
@@ -180,10 +184,10 @@ footer > h4 {
 
 .m-t-24 {
   margin-top: 24px;
-}
+} */
 /* shimmer styling */
 
-.menu {
+/* .menu {
   display: flex;
   gap: 100px;
   padding: 30px;
@@ -211,4 +215,4 @@ footer > h4 {
 }
 .btn-red {
   background-color: rgb(192, 7, 7);
-}
+} */
