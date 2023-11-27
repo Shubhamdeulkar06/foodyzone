@@ -3,9 +3,12 @@ import { useParams } from "react-router-dom";
 import { CDN_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
+
+  const [showIndex, setShowIndex] = useState(null);
 
   const restaurant = useRestaurantMenu(resId);
 
@@ -16,26 +19,31 @@ const RestaurantMenu = () => {
   const { itemCards } =
     restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;
-  console.log(itemCards);
+  // console.log(itemCards);
+  const categories =
+    restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  console.log(categories);
   return (
-    <div className="menu">
+    <div className="text-center m-6">
+      <h1 className="font-bold my-2 text-2xl">{name}</h1>
+      <p className="text-gray-400 font-bold">
+        {cuisines.join(", ")} -{costForTwoMessage}
+      </p>
+
       <div>
-        <h1>Restaurant id: {resId} </h1>
-        <h2>{name}</h2>
-        <img src={CDN_URL + cloudinaryImageId} />
-        <h2>{cuisines}</h2>
-        <h2>{costForTwoMessage}</h2>
-      </div>
-      <div>
-        <h1>Menu</h1>
-        <ul>
-          {itemCards.map((item) => (
-            <li key={item.card.info.id}>
-              {item.card.info.name} -{" Rs."}
-              {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-            </li>
-          ))}
-        </ul>
+        {/* {categories accordian} */}
+        {categories.map((category, index) => (
+          <RestaurantCategory
+            key={category?.card?.card?.title}
+            data={category?.card?.card}
+            showItems={index === showIndex && true}
+            setShowIndex={() => setShowIndex(index)}
+          />
+        ))}
       </div>
     </div>
   );
