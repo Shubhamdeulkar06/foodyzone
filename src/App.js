@@ -18,7 +18,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
   return (
     <Provider store={appStore}>
-      <div className="app">
+      <div className="relative">
         <Header />
         <Outlet />
         <Footer />
