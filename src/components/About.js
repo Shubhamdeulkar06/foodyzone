@@ -15,7 +15,7 @@ class About extends React.Component {
 
     return (
       <div className="m-4">
-        <h1>This is the about page</h1>
+        <h1>Hello, Welcome</h1>
         <div className="flex justify-center">
           <UserClass name={"shubham from class"} location={"Goa"} />
         </div>

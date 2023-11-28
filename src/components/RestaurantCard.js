@@ -16,7 +16,9 @@ const RestaurantCard = (props) => {
         />
       </div>
       <div className="p-3">
-        <h2 className="font-bold pt-2 text-lg">{name}</h2>
+        <h2 className="font-bold pt-2 text-lg whitespace-nowrap overflow-hidden text-ellipsis">
+          {name}
+        </h2>
         <h3>⭐ {avgRating} </h3>
         <h4>{costForTwo} </h4>
         <h4 className="text-slate-400 whitespace-nowrap overflow-hidden text-ellipsis">

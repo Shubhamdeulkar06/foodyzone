@@ -69,7 +69,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center md:justify-start gap-1">
+      <div className="flex flex-wrap justify-center md:justify-start gap-1 mb-4">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
