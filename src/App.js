@@ -14,7 +14,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 
-const Grocery = lazy(() => import("./components/Grocery"));
+const Gallery = lazy(() => import("./components/Gallery"));
 const AppLayout = () => {
   return (
     <Provider store={appStore}>
@@ -45,10 +45,10 @@ const approuter = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/grocery",
+        path: "/gallery",
         element: (
           <Suspense fallback={<h1>Wait for a moment!!!!!!!!!!!!</h1>}>
-            <Grocery />
+            <Gallery />
           </Suspense>
         ),
       },
