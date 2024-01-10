@@ -14,9 +14,18 @@ const Cart = () => {
       <div className="flex">
         <div className="w-6/12 m-auto">
           {cartItems.length === 0 && (
-            <h1 className="text-2xl">
-              Your cart is empty! please add some items
-            </h1>
+            <div>
+              <h1 className="text-2xl">
+                Your cart is empty! please add some items
+              </h1>
+              <p className="mt-4 text-gray-600">
+                Let's get you back{" "}
+                <a href="/" className="text-blue-500">
+                  home
+                </a>
+                .
+              </p>
+            </div>
           )}
           <ItemList items={cartItems} />
         </div>

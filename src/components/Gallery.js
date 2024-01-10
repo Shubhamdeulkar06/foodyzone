@@ -2,7 +2,7 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 m-10 mb-20">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 m-10 mb-20">
       <div className="grid gap-4">
         <div>
           <img
